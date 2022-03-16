@@ -13,7 +13,21 @@ ENV VI_IMAGE 1
 RUN touch /firstrun
 
 #RUN apk update && apk add \
-RUN apk update && apk add 
+RUN apk update && apk add \
+    bash \
+    wget \
+    supervisor \
+    net-tools \
+    bind-tools \
+    libxml2-utils \
+    openssh-client \
+    openssh-server \
+    vim \
+    sudo \
+    less \
+    ed \
+    make \
+    tar 
 
 # Install Unispherecli
 COPY unitymetrics /usr/bin
