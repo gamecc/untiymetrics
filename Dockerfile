@@ -13,7 +13,7 @@ ENV VI_IMAGE 1
 RUN touch /firstrun
 
 #RUN apk update && apk add \
-RUN apk update && apk add \
+RUN apt-get update && apt-get install \
     bash \
     wget \
     supervisor \
