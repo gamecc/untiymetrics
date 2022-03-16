@@ -16,17 +16,8 @@ RUN touch /firstrun
 RUN apt-get update && apt-get install \
     bash \
     wget \
-    supervisor \
-    net-tools \
-    bind-tools \
-    libxml2-utils \
-    openssh-client \
-    openssh-server \
     vim \
     sudo \
-    less \
-    ed \
-    make \
     tar 
 
 # Install Unispherecli
@@ -43,7 +34,7 @@ RUN dpkg -i telegraf_1.21.4-1_amd64.deb
 RUN apt-get clean
 
 # setup default user
-RUN addgroup -S unityadmin 
+RUN addgroup unityadmin 
 RUN adduser -S unityadmin -G unityadmin -s /bin/bash
 RUN echo 'unityadmin:untyadm!n' | chpasswd
 RUN echo '%unityadmin ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
