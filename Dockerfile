@@ -13,13 +13,17 @@ ENV VI_IMAGE 1
 RUN touch /firstrun
 
 #RUN apk update && apk add \
-RUN apk update
+RUN apk update && apk add 
 
-# Install Unisperecli
+# Install Unispherecli
 COPY unitymetrics /usr/bin
 COPY unitymetrics /usr/sbin
 RUN chmod +x /usr/bin/unitymetrics
 RUN chmod +x /usr/sbin/unitymetrics
+
+#Install telegraf
+RUN wget https://repos.influxdata.com/ubuntu/pool/stable/t/telegraf/telegraf_1.21.4-1_amd64.deb 
+RUN dpkg -i telegraf_1.21.4-1_amd64.deb 
 
 # Cleanup
 RUN apt-get clean
